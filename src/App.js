@@ -1,11 +1,13 @@
 import './App.css';
-
+import { Header } from './Components/component_list';
+import React from 'react';
 function App() {
+
   return (
     <div className="App">
-    <div className='dummy'>
+<Header/>
       
-    </div>
+
     </div>
   );
 }

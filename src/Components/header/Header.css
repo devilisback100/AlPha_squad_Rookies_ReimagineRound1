@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+
+/* Animation */
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+}
+
+@property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+}
+
+@property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+}
+
+
+
+@keyframes borderRotate {
+    100% {
+        --angle: 420deg;
+    }
+}
+
+@keyframes borderRadial {
+    20% {
+        --gradX: 100%;
+        --gradY: 50%;
+    }
+
+    40% {
+        --gradX: 100%;
+        --gradY: 100%;
+    }
+
+    60% {
+        --gradX: 50%;
+        --gradY: 100%;
+    }
+
+    80% {
+        --gradX: 0%;
+        --gradY: 50%;
+    }
+
+    100% {
+        --gradX: 50%;
+        --gradY: 0%;
+    }
+}
+
+/* Css query */
+
+.Header_Parent_container {
+    width: 99%;
+    height: 10%;
+    margin: auto;
+    margin-top: 3px;
+    display: flex;
+    padding: 10px;
+}
+
+.Header_child1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Header_child1:hover {
+    border: 3px solid;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+    animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.Boat_Text_logo {
+    height: 50%;
+    width: 70%;
+}
+
+.Boat_Text_logo:hover {
+    cursor: pointer;
+}
+
+.Header_child2 {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--Text-color);
+    height: 100%;
+}
+
+.Header_child2_box1:hover,
+.Header_child2_box2:hover,
+.Header_child2_box3:hover,
+.Header_child2_box4:hover,
+.Header_child2_box5:hover {
+    cursor: pointer;
+    border: 3px solid;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+    animation: borderRotate var(--d) linear infinite forwards;
+    padding: 17px;
+}
+
+.Header_child2_box1_icon_1 {
+    rotate: 90deg;
+    margin-left: 5px;
+}
+
+.Header_Boat_categories {
+    display: none;
+    width: 90%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+    margin: auto;
+    margin-top: 7px;
+    height: auto;
+    overflow: scroll;
+}
+
+.Header_Boat_categories li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: var(--Text-color);
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 100px;
+    width: 200px;
+}
+.Header_Boat_categories li img{
+    height: 100%;
+}
+
+.Header_Boat_categories li:hover,
+.Header_child2_box5_expand li:hover {
+    cursor: pointer;
+}
+
+.Header_child2_box5_expand {
+    display: none;
+    position: relative;
+    left: 56%;
+    width: max-content;
+    height: max-content;
+    text-align: center;
+}
+
+.Header_child2_box5_expand li {
+    color: var(--Text-color);
+    list-style: none;
+    margin-top: 3px;
+}
+
+.Header_child1_Menu_icon {
+    display: none;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.Header_child3 {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Header_child3_search_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+    width: 80%;
+    border-radius: 10px;
+    background-color: var(--Text-color);
+}
+
+.Header_child3_search_button input {
+    border: none;
+    width: 80%;
+    height: 90%;
+    outline: none;
+}
+
+.Header_child4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: .5;
+}
+
+.Header_child4:nth-child(n) svg {
+    color: white;
+    width: 32px;
+    height: 32px;
+}
+
+.Header_child4:nth-child(n) svg:hover {
+    cursor: pointer;
+}
+
+.Header_child4_search_icon {
+    display: none;
+}
+
+/* Media queries */
+@media screen and (max-width:1100px) {
+    .Header_child2 {
+        display: none;
+    }
+
+    .Header_child1_Menu_icon {
+        display: flex;
+    }
+
+    .Header_child3 {
+        flex: 5;
+    }
+
+    .Header_child4 {
+        flex: 1.5;
+    }
+}
+
+
+@media screen and (max-width:900px) {
+    .Boat_Text_logo {
+        width: 85%;
+    }
+}
+
+
+@media screen and (max-width:700px) {
+    .Boat_Text_logo {
+        width: 90%;
+
+    }
+}
+
+
+@media screen and (max-width:550px) {
+    .Boat_Text_logo {
+        width: 95%;
+        margin: auto;
+        height: 50%;
+    }
+
+    .Header_child3 {
+        display: none;
+    }
+
+    .Header_child1_Menu_icon {
+        flex: .2;
+    }
+
+    .Header_child2 {
+        flex: 2;
+    }
+
+    .Header_child4 {
+        flex: .5;
+    }
+
+    .Header_child4_search_icon {
+        display: block;
+    }
+
+    .Header_child4:nth-child(n) svg {
+        color: white;
+        width: 24px;
+        height: 24px;
+    }
+}
