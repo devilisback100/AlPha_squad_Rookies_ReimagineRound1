@@ -3,4 +3,5 @@
     height: 100%;
         background: var(--Background_color);
         position: absolute;
+        margin: 0px;
 }

@@ -1,16 +1,49 @@
-import React, { useState } from 'react'
-import { AiOutlineUser, AiTwotoneShopping, AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
-import './Header.css'
-import { search_icon,Wired_Earbuds_image, Personalised_product_image, Neckband_image, Smartwatch_image, Gaming_Headphone_image, Powerbank_image, cable_image, Wired_Earphone_image, Wireless_HeadPhone_image, Wired_HeadPhone_image, Wireless_Speaker_image, Soundbars_image, Party_Speaker_image, Trimmers_image, charger_image, CarAccessories_image, T_rebel_for_women, Limited_image, super_hero_collection_imagr } from '../component_list'
+import gsap from 'gsap';
+import React, { useState } from 'react';
+import { useGSAP } from "@gsap/react";
+import { AiOutlineUser, AiTwotoneShopping, AiOutlineMenu, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
+import { search_icon, Wired_Earbuds_image, Personalised_product_image, Neckband_image, Smartwatch_image, Gaming_Headphone_image, Powerbank_image, cable_image, Wired_Earphone_image, Wireless_HeadPhone_image, Wired_HeadPhone_image, Wireless_Speaker_image, Soundbars_image, Party_Speaker_image, Trimmers_image, charger_image, CarAccessories_image, T_rebel_for_women, Limited_image, super_hero_collection_imagr } from '../component_list'
+import './Header.css';
+
 function Header() {
-  const [isHovered, setIsHovered] = useState({ "Header_child2_box1": false,"Header_child2_box5_expand":false});
+  const [isHovered, setIsHovered] = useState({ "Header_child2_box1": false, "Header_child2_box5_expand": false, "Header_child2_expand": false });
+  useGSAP(() => {
+    var tl = gsap.timeline();
+    if (window.innerWidth > 550) {
+      tl.from(".box1", {
+        y: -220,
+        opacity: 0,
+        stagger: 1,
+        duration: 0.175,
+      })
+    }
+    else {
+      tl.from(".box1,.Header_child1_Menu_icon", {
+        y: -220,
+        opacity: 0,
+        duration: 1.5,
+        ease: "elastic.out(1,0.3)",
+      })
+    }
+
+    document.querySelector(".Header_child1_Menu_icon").addEventListener("click",()=>{
+      tl.from(".Header_child2_expand",{
+        x: -220,
+        opacity: 0,
+        duration: 1,
+        ease: "elastic.out(1,0.3)",
+      })
+    })    
+
+  })
+
   return (
     <>
       <div className='Header_Parent_container'>
-        <div className='Header_child1_Menu_icon'>
-        <AiOutlineMenu style={{ height: "32px", width: "32px" }} />
+        <div className='Header_child1_Menu_icon' >
+          <AiOutlineMenu style={{ height: "32px", width: "32px", cursor: "pointer" }} onClick={() => { setIsHovered({ "Header_child2_expand": true }) }} />
         </div>
-        <div className='Header_child1'>
+        <div className='Header_child1 box1'>
           <svg className='Boat_Text_logo' id="Group_205728" data-name="Group 205728" xmlns="http://www.w3.org/2000/svg" width="10.848" height="5.372" viewBox="0 0 151.848 62.372">
             <g id="Group_208975" data-name="Group 208975" transform="translate(0 0)">
               <path id="Path_1" data-name="Path 1" d="M328.831,120.079a18.374,18.374,0,0,1,14.5,6.724q5.8,6.724,5.8,16.779,0,10.005-5.8,16.7a19.108,19.108,0,0,1-29.05,0q-5.849-6.7-5.849-16.7,0-10.061,5.849-16.779a18.508,18.508,0,0,1,14.55-6.724m0,42.195a14.177,14.177,0,0,0,11.261-5.321,22.018,22.018,0,0,0-.02-26.762,14.132,14.132,0,0,0-11.241-5.4,14.278,14.278,0,0,0-11.333,5.346,22.042,22.042,0,0,0,0,26.814,14.3,14.3,0,0,0,11.333,5.321" transform="translate(-268.85 -104.669)" fill="#1a2024" />
@@ -20,13 +53,13 @@ function Header() {
             </g>
           </svg>
         </div>
-        <div className='Header_child2'>
-          <div className='Header_child2_box1' onMouseEnter={() => setIsHovered({"Header_child2_box1":true})} >
+        <div className='Header_child2 box1'>
+          <div className='Header_child2_box1' onMouseEnter={() => setIsHovered({ "Header_child2_box1": true })} >
             <span>Categories</span>
-            <svg className='Header_child2_box1_icon_1' focusable="false" width="7" height="10" viewBox="0 0 7 10" style={{ rotate: isHovered["Header_child2_box1"] ? '0deg' : '90deg' }}>      
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.9394 5L0.469727 1.53033L1.53039 0.469666L6.06072 5L1.53039 9.53032L0.469727 8.46967L3.9394 5Z" fill="currentColor">
-              </path>    
-              </svg>
+            <svg className='Header_child2_box1_icon_1' focusable="false" width="7" height="10" viewBox="0 0 7 10" style={{ rotate: isHovered["Header_child2_box1"] ? '0deg' : '90deg' }}>
+              <path fillRule="evenodd" clipRule="evenodd" d="M3.9394 5L0.469727 1.53033L1.53039 0.469666L6.06072 5L1.53039 9.53032L0.469727 8.46967L3.9394 5Z" fill="currentColor">
+              </path>
+            </svg>
           </div>
           <div className='Header_child2_box2'>
             <span>boAt Personalisation</span>
@@ -42,28 +75,28 @@ function Header() {
               More
             </span>
             <svg className='Header_child2_box1_icon_1' focusable="false" width="7" height="10" viewBox="0 0 7 10" style={{ rotate: isHovered["Header_child2_box5_expand"] ? '0deg' : '90deg' }}>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.9394 5L0.469727 1.53033L1.53039 0.469666L6.06072 5L1.53039 9.53032L0.469727 8.46967L3.9394 5Z" fill="currentColor">
+              <path fillRule="evenodd" clipRule="evenodd" d="M3.9394 5L0.469727 1.53033L1.53039 0.469666L6.06072 5L1.53039 9.53032L0.469727 8.46967L3.9394 5Z" fill="currentColor">
               </path>
             </svg>
           </div>
         </div>
-        <div className='Header_child3'>
+        <div className='Header_child3 box1' style={{ flex: isHovered['Header_child2_expand'] ? '2.6' : "" }}>
           <button className='Header_child3_search_button'>
-            <img alt= 'search_icon'src={search_icon} style={{width:"16px",height:"16px"}}/>
+            <img alt='search_icon' src={search_icon} style={{ width: "16px", height: "16px" }} />
             <input placeholder='Search Products'>
             </input>
           </button>
         </div>
-        <div className='Header_child4'>
+        <div className='Header_child4 box1'>
           <span className='Header_child4_search_icon' >
             <AiOutlineSearch />
           </span>
-<span>
-            <AiOutlineUser/>
-</span>
-<span>
-            <AiTwotoneShopping/>
-</span>
+          <span>
+            <AiOutlineUser />
+          </span>
+          <span>
+            <AiTwotoneShopping />
+          </span>
         </div>
       </div>
       <div className='Header_Boat_categories' style={{ display: isHovered["Header_child2_box1"] ? 'flex' : 'none' }} onMouseLeave={() => { setIsHovered({ "Header_child2_box1": false }) }}>
@@ -135,44 +168,74 @@ function Header() {
           <img alt='Limited_image' src={Limited_image} />
           Limited Edition</li>
       </div>
-      <div className='Header_child2_box5_expand' style={{ display: isHovered["Header_child2_box5_expand"] ? 'block' : 'none' }} onMouseLeave={() => setIsHovered({ "Header_child2_box5_expand": false })}>
-        <ul>
-          <li>
+      <div className='Header_child2_box5_expand' style={{ display: isHovered["Header_child2_box5_expand"] ? 'flex' : 'none' }} onMouseLeave={() => setIsHovered({ "Header_child2_box5_expand": false })}>
+
+        <li>
+          <span>
+            Daily
+          </span>
+        </li>
+        <li>
+          <span>
+            Deals
+          </span>
+        </li>
+        <li>
+          <span>
+            Blogs
+          </span>
+        </li>
+        <li>
+          <span>
+            Refer & Earn Careers
+          </span>
+        </li>
+        <li>
+          <span>
+            Social Responsibility
+          </span>
+        </li>
+        <li>
+          <span>
+            Store Locator
+          </span>
+        </li>
+        <li>
+          <span>
+            boAt Community
+          </span>
+        </li>
+      </div>
+
+      <div className='Header_child2_expand' style={{ display: isHovered["Header_child2_expand"] ? "grid" : "none" }}>
+        <AiOutlineClose className="Header_child2_expand_close_icon" onClick={() => { setIsHovered({ "Header_child2_expand": false }) }} />
+        <div className='Header_child2' style={{ flexDirection: "column", display: isHovered["Header_child2_expand"] ? "flex" : "none" }}>
+          <div className='Header_child2_box1' onMouseEnter={() => setIsHovered({ "Header_child2_box1": true })} >
+            <span>Categories</span>
+            <svg className='Header_child2_box1_icon_1' focusable="false" width="7" height="10" viewBox="0 0 7 10" style={{ rotate: isHovered["Header_child2_box1"] ? '0deg' : '90deg' }}>
+              <path fillRule="evenodd" clipRule="evenodd" d="M3.9394 5L0.469727 1.53033L1.53039 0.469666L6.06072 5L1.53039 9.53032L0.469727 8.46967L3.9394 5Z" fill="currentColor">
+              </path>
+            </svg>
+          </div>
+          <div className='Header_child2_box2'>
+            <span>boAt Personalisation</span>
+          </div>
+          <div className='Header_child2_box3'>
+            <span>Gift with boAt</span>
+          </div>
+          <div className='Header_child2_box4'>
+            <span>Corporate Orders</span>
+          </div>
+          <div className='Header_child2_box5' onMouseEnter={() => setIsHovered({ "Header_child2_box5_expand": true })}>
             <span>
-              Daily
+              More
             </span>
-          </li>
-          <li>
-            <span>
-              Deals
-            </span>
-          </li>
-          <li>
-            <span>
-              Blogs
-            </span>
-          </li>
-          <li>
-            <span>
-              Refer & Earn Careers
-            </span>
-          </li>
-          <li>
-            <span>
-              Social Responsibility
-            </span>
-          </li>
-          <li>
-            <span>
-              Store Locator
-            </span>
-          </li>
-          <li>
-            <span>
-              boAt Community
-            </span>
-          </li>
-        </ul>
+            <svg className='Header_child2_box1_icon_1' focusable="false" width="7" height="10" viewBox="0 0 7 10" style={{ rotate: isHovered["Header_child2_box5_expand"] ? '0deg' : '90deg' }}>
+              <path fillRule="evenodd" clipRule="evenodd" d="M3.9394 5L0.469727 1.53033L1.53039 0.469666L6.06072 5L1.53039 9.53032L0.469727 8.46967L3.9394 5Z" fill="currentColor">
+              </path>
+            </svg>
+          </div>
+        </div>
       </div>
     </>
   )

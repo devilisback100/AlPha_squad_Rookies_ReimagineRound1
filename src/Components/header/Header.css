@@ -55,6 +55,42 @@
     }
 }
 
+@-webkit-keyframes scale-in-ver-top {
+    0% {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in-ver-top {
+    0% {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 100% 0%;
+        transform-origin: 100% 0%;
+        opacity: 1;
+    }
+}
+
 /* Css query */
 
 .Header_Parent_container {
@@ -63,7 +99,6 @@
     margin: auto;
     margin-top: 3px;
     display: flex;
-    padding: 10px;
 }
 
 .Header_child1 {
@@ -73,11 +108,6 @@
     justify-content: center;
 }
 
-.Header_child1:hover {
-    border: 3px solid;
-    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
-    animation: borderRotate var(--d) linear infinite forwards;
-}
 
 .Boat_Text_logo {
     height: 50%;
@@ -104,9 +134,9 @@
 .Header_child2_box5:hover {
     cursor: pointer;
     border: 3px solid;
-    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 20;
     animation: borderRotate var(--d) linear infinite forwards;
-    padding: 17px;
+    padding: 10px;
 }
 
 .Header_child2_box1_icon_1 {
@@ -123,7 +153,25 @@
     margin: auto;
     margin-top: 7px;
     height: auto;
-    overflow: scroll;
+}
+
+.Header_child2_expand {
+    display: none;
+    grid-auto-rows: 10% 50%;
+    position: absolute;
+    top: 5px;
+    padding: 30px;
+    z-index: 1;
+    background: var(--Background_color);
+    height: 60%;
+    width: 21%;
+    left: 20px;
+}
+
+.Header_child2_expand_close_icon {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
 }
 
 .Header_Boat_categories li {
@@ -136,7 +184,8 @@
     height: 100px;
     width: 200px;
 }
-.Header_Boat_categories li img{
+
+.Header_Boat_categories li img {
     height: 100%;
 }
 
@@ -147,17 +196,28 @@
 
 .Header_child2_box5_expand {
     display: none;
-    position: relative;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--Box-color);
+    height: 40%;
+    width: 20%;
     left: 56%;
-    width: max-content;
-    height: max-content;
     text-align: center;
+    -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .Header_child2_box5_expand li {
     color: var(--Text-color);
     list-style: none;
     margin-top: 3px;
+    flex: 1;
+    font-size: 18px;
+}
+
+.Header_child2_box5_expand li:hover {
+    color: var(--color-2);
+    font-size: 20px;
 }
 
 .Header_child1_Menu_icon {
@@ -236,14 +296,38 @@
     .Boat_Text_logo {
         width: 85%;
     }
+        .Header_child2_box5_expand{
+            width: 30%;
+        }
 }
 
 
 @media screen and (max-width:700px) {
     .Boat_Text_logo {
         width: 90%;
-
     }
+
+    .Header_child2_expand {
+        grid-auto-rows: 9% 65%;
+        width: 25%;
+    }
+
+    .Header_child2 {
+        text-align: center;
+    }
+
+    .Header_Boat_categories li {
+        height: 120px;
+        width: 180px;
+    }
+
+    .Header_Boat_categories {
+        height: 90%;
+        overflow: scroll;
+    }
+        .Header_child2_box5_expand{
+            width: 35%;
+        }
 }
 
 
@@ -266,6 +350,11 @@
         flex: 2;
     }
 
+.Header_child2_box5_expand{
+    width: 75%;
+    left: 10%;
+    height: 60%;
+}
     .Header_child4 {
         flex: .5;
     }
@@ -279,4 +368,23 @@
         width: 24px;
         height: 24px;
     }
+
+    .Header_child2_expand {
+        grid-template-rows: 10% 70%;
+        width: 50%;
+        height: 75%;
+        left: 1px;
+    }
+
+    .Header_Boat_categories {
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+    .Header_Boat_categories li {
+        height: 70px;
+        width: 120px;
+        font-size: 10px;
+    }
+
 }
