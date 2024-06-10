@@ -1,4 +1,13 @@
 export { default as Header } from './header/Header'
+export { default as Footer } from './footer/Footer'
+export { default as Blogs } from './blogs/Blogs'
+export { default as BestSelletSection } from './bestSellerSection/BestSellerSection'
+export { default as SummerSellSection } from './summerSellSection/SummerSellSection'
+export { default as Slider } from './slider/slider'
+export { default as BottomSection } from './bottom_section/BottomSection'
+
+
+export { default as Bes } from './bestSellerSection/BestSellerSection'
 export { default as cable_image } from '../Asset/files/Cables_3c471ad3-9d08-426a-9d16-a6df00687ff0_small.png'
 export { default as Neckband_image } from '../Asset/files/Neckbands_bc6343f4-622f-4ebd-bb36-205643c3bf78.png'
 export { default as Smartwatch_image } from '../Asset/files/Smartwatches_88f12bcf-24bd-4e3a-aacb-ecc204f62179.png'
@@ -19,3 +28,4 @@ export { default as T_rebel_for_women } from '../Asset/files/T-rebel_small.png'
 export { default as Limited_image } from '../Asset/files/Limited-Edition_90154b16-39c9-4461-a96d-a818d791fb99_small.png'
 export { default as super_hero_collection_imagr } from '../Asset/files/super_hero_collection.png'
 export { default as search_icon } from '../Asset/files/search_558f3ad8-0ef9-4a9b-8576-a396b44aacd8.png'
+export { default as Boat_logo } from '../Asset/files/Boat-Logo_2.png'

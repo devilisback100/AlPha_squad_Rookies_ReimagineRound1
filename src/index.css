@@ -1,3 +1,4 @@
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -13,7 +14,8 @@ code {
   --gradY: 0%;
   --c1: rgb(19, 59, 205);
   --c2: rgba(23, 23, 27, 0.63);
-  --color-2: grey
+  --color-2: grey;
+  --color-3: rgb(89, 145, 145);
 }
 
 body {
@@ -23,4 +25,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.SummerSellSection_main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-3);
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+.MainSummerSection{
+    height: 150px;
+    width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+    position: relative;
+}
+.SummerSellSection_part_1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#demo,
+.SummerSellSection_part_1 span {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    word-spacing: 5px;
+    font-family: "Lato", sans-serif;
+}
+
+.SummerSellSection_part_2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SummerSellSection_part_3 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SummerSellSection_part_3 svg {
+    width: 72px;
+    height: 72px;
+}
+
+.Svg_animation {
+    cursor: pointer;
+    width: 80%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+
+
+@media screen and (max-width:1500px) {
+
+    #demo,
+    .SummerSellSection_part_1 span {
+        font-size: 18px;
+        font-weight: 600;
+        word-spacing: 3px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+
+    #demo,
+    .SummerSellSection_part_1 span {
+        font-size: 15px;
+        font-weight: 600;
+        word-spacing: 1px;
+    }
+
+    .SummerSellSection_part_2 {
+        flex: 1.5;
+    }
+
+    .SummerSellSection_part_3 {
+        flex: 0.5;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    #demo,
+    .SummerSellSection_part_1 span {
+        font-size: 14px;
+        font-weight: 600;
+        word-spacing: 1px;
+    }
+
+    .SummerSellSection_part_2 {
+        flex: 1.7;
+    }
+
+    .SummerSellSection_part_3 {
+        flex: 0.3;
+    }
+}

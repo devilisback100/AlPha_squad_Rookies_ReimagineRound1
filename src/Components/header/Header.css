@@ -95,10 +95,11 @@
 
 .Header_Parent_container {
     width: 99%;
-    height: 10%;
+    height: 10vh;
     margin: auto;
     margin-top: 3px;
     display: flex;
+    position: relative;
 }
 
 .Header_child1 {
@@ -163,7 +164,7 @@
     padding: 30px;
     z-index: 1;
     background: var(--Background_color);
-    height: 60%;
+    height: 60vh;
     width: 21%;
     left: 20px;
 }
@@ -199,12 +200,14 @@
     flex-direction: column;
     position: absolute;
     background-color: var(--Box-color);
-    height: 40%;
+    height: 40vh;
     width: 20%;
     left: 56%;
     text-align: center;
     -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    z-index: 10;
+    top: 60px;
 }
 
 .Header_child2_box5_expand li {
@@ -242,6 +245,7 @@
     width: 80%;
     border-radius: 10px;
     background-color: var(--Text-color);
+    padding: revert !important;
 }
 
 .Header_child3_search_button input {
@@ -351,9 +355,10 @@
     }
 
 .Header_child2_box5_expand{
+    top: 10px;
     width: 75%;
     left: 10%;
-    height: 60%;
+    height: 60vh;
 }
     .Header_child4 {
         flex: .5;
@@ -372,12 +377,12 @@
     .Header_child2_expand {
         grid-template-rows: 10% 70%;
         width: 50%;
-        height: 75%;
+        height: 75vh;
         left: 1px;
     }
 
     .Header_Boat_categories {
-        height: 100%;
+        height: 100vh;
         overflow-y: scroll;
     }
 

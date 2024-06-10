@@ -1,11 +1,13 @@
 import gsap from 'gsap';
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { useGSAP } from "@gsap/react";
 import { AiOutlineUser, AiTwotoneShopping, AiOutlineMenu, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { search_icon, Wired_Earbuds_image, Personalised_product_image, Neckband_image, Smartwatch_image, Gaming_Headphone_image, Powerbank_image, cable_image, Wired_Earphone_image, Wireless_HeadPhone_image, Wired_HeadPhone_image, Wireless_Speaker_image, Soundbars_image, Party_Speaker_image, Trimmers_image, charger_image, CarAccessories_image, T_rebel_for_women, Limited_image, super_hero_collection_imagr } from '../component_list'
 import './Header.css';
 
-function Header() {
+function Header({ onBlogClick }) {
+
+ 
   const [isHovered, setIsHovered] = useState({ "Header_child2_box1": false, "Header_child2_box5_expand": false, "Header_child2_expand": false });
   useGSAP(() => {
     var tl = gsap.timeline();
@@ -14,7 +16,7 @@ function Header() {
         y: -220,
         opacity: 0,
         stagger: 1,
-        duration: 0.175,
+        duration: 0.075,
       })
     }
     else {
@@ -181,7 +183,7 @@ function Header() {
           </span>
         </li>
         <li>
-          <span>
+          <span onClick={onBlogClick}>
             Blogs
           </span>
         </li>
