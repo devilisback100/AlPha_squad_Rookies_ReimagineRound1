@@ -5,9 +5,17 @@ import { useState } from 'react';
 function App() {
   const [showOnlyBlogs, setShowOnlyBlogs] = useState(false);
 
+  const onBlogClick = () => {
+    try {
+      setShowOnlyBlogs(prevState => !prevState);
+    } catch (error) {
+      console.error('An error occurred: ', error);
+    }
+  };
+
   return (
     <div className="App">
-      <Header onBlogClick={() => showOnlyBlogs ? setShowOnlyBlogs(false) : setShowOnlyBlogs(true)} />
+      <Header onBlogClick={onBlogClick} />
       {showOnlyBlogs ? <Blogs setShowOnlyBlogs={setShowOnlyBlogs} /> : (
         <>
           <Slider />
@@ -21,6 +29,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

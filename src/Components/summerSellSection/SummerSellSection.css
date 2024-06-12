@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-3);
+    color: var(--Text-color);
     width: 80%;
     margin: auto;
     margin-top: 10px;
@@ -110,4 +110,11 @@ justify-content: center;
     .SummerSellSection_part_3 {
         flex: 0.3;
     }
+}
+@media screen and (max-width:550px) {
+
+    .MainSummerSection{
+        display: none;
+    }
+  
 }

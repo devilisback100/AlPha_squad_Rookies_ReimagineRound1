@@ -52,7 +52,11 @@ color: var(--color-3);
 }
 
 @media screen and (max-width:550px) {
+
+.BestSellerSection_box video{
+    width: 200px;
+}
 .BestSellerSection_main {
-        display: none;
-    }
+    height: 350px;
+}
 }

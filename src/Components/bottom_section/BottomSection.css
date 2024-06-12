@@ -6,6 +6,7 @@
     height: 100%;
     flex-direction: column;
     position: relative;
+    z-index: 15;
 }
 
 .BottomSection_part_1 {
@@ -87,12 +88,16 @@
         height: 150px;
     }
 }
-@media screen and (max-width:450px) {
+@media screen and (max-width:550px) {
     .BottomSection_part_1 img {
         height: 48px;
+        
     }
 
     .BottomSection_part_2_box img {
-        height: 100px;
+        height: 70px;
     }
+        .BottomSection_Text {
+            font-size: 12px;
+        }
 }

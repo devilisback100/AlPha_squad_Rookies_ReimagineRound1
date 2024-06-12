@@ -2,6 +2,7 @@
     background: var(--Background_color);
     color: var(--Text-color);
     padding: 0px;
+    overflow: hidden;
 }
 
 a {
