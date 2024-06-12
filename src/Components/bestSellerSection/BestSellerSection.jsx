@@ -6,7 +6,6 @@ import { useGSAP } from '@gsap/react';
 
 
 function BestSellerSectionBox({ source_link, poster_link, Product_name, Target_link }) {
-gsap.registerPlugin(ScrollTrigger);
   const videoElementRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -43,6 +42,7 @@ function BestSellerSection() {
     ["https://www.boat-lifestyle.com/cdn/shop/files/quinn_OyJHanx4QSdUN3OVGTO7C.mp4", "https://www.boat-lifestyle.com/cdn/shop/files/quinn_KXwTUL2r91fh5uAHqSyIH.jpg", "Neckbands", "https://www.boat-lifestyle.com/collections/wireless-earphones"],
     ["https://www.boat-lifestyle.com/cdn/shop/files/quinn_CpsRIdJWtpXyFN3enwbXd.mp4", "https://www.boat-lifestyle.com/cdn/shop/files/quinn_v90hMzAEa585W2YTUR9UF.jpg", "Headphones", "https://www.boat-lifestyle.com/collections/rockerz-headphones"],
     ["https://www.boat-lifestyle.com/cdn/shop/files/quinn_j1TwOEeceKYOJc7d7mAim.mp4", "https://www.boat-lifestyle.com/cdn/shop/files/quinn_FY7dfyFMiXzNTqSLFu2lV.jpg", "Wireless Speakers", "https://www.boat-lifestyle.com/collections/wireless-speakers"]]
+gsap.registerPlugin(ScrollTrigger);
 
 useGSAP(()=>{
   gsap.to(".BestSellerSection_slider", {
