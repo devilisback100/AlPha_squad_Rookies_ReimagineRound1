@@ -4,7 +4,7 @@ import './Blogs.css'
 function ExpandBlogs({ Image, Title, Blog_link }) {
     const [htmlCode, setHtmlCode] = useState(null);
     useEffect(() => {
-        fetch("http://localhost:5000/get_code/https://www.boat-lifestyle.com" + Blog_link).then(response => response.json())
+        fetch("https://reimage-boat-website.vercel.app/get_code/https://www.boat-lifestyle.com" + Blog_link).then(response => response.json())
             .then(htmlCode => {
                 // Set the state with the fetched HTML code
                 setHtmlCode(htmlCode.join(''));
@@ -42,7 +42,7 @@ function Blogs({ setShowOnlyBlogs }) {
     const [blog_expand_check, set_blog_expand_check] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/get_blogs')
+        fetch('https://reimage-boat-website.vercel.app/get_blogs')
             .then(response => response.json())
             .then(data => {
                 set_Blog_data(data);
