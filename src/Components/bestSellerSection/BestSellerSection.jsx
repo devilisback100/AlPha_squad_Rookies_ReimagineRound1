@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './BestSellerSection.css';
 import gsap from 'gsap';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import {scrollTrigger} from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
