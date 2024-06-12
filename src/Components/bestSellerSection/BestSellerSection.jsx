@@ -3,7 +3,7 @@ import './BestSellerSection.css';
 import gsap from 'gsap';
 import {scrollTrigger} from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(scrollTrigger);
 
 
 function BestSellerSectionBox({ source_link, poster_link, Product_name, Target_link }) {
