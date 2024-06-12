@@ -142,4 +142,7 @@
     .Expand_blogs_part2 img {
         width: 90%;
     }
+        .Blogs_main{
+            display: none;
+        }
 }
