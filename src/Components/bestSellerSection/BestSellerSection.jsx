@@ -4,9 +4,9 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
-gsap.registerPlugin(ScrollTrigger);
 
 function BestSellerSectionBox({ source_link, poster_link, Product_name, Target_link }) {
+  gsap.registerPlugin(ScrollTrigger);
   const videoElementRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -44,23 +44,23 @@ function BestSellerSection() {
     ["https://www.boat-lifestyle.com/cdn/shop/files/quinn_CpsRIdJWtpXyFN3enwbXd.mp4", "https://www.boat-lifestyle.com/cdn/shop/files/quinn_v90hMzAEa585W2YTUR9UF.jpg", "Headphones", "https://www.boat-lifestyle.com/collections/rockerz-headphones"],
     ["https://www.boat-lifestyle.com/cdn/shop/files/quinn_j1TwOEeceKYOJc7d7mAim.mp4", "https://www.boat-lifestyle.com/cdn/shop/files/quinn_FY7dfyFMiXzNTqSLFu2lV.jpg", "Wireless Speakers", "https://www.boat-lifestyle.com/collections/wireless-speakers"]]
 
-useGSAP(()=>{
-  gsap.to(".BestSellerSection_slider", {
-    scrollLeft: "+=1000",
-    ease: "power1.out",
-    scrollTrigger: {
-      trigger: ".BestSellerSection_main",
-      start: "top 30%",
-      end: "bottom 20%",
-      scrub: 2,
-    }
-  });
-})
-  
+  useGSAP(() => {
+    gsap.to(".BestSellerSection_slider", {
+      scrollLeft: "+=1000",
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: ".BestSellerSection_main",
+        start: "top 30%",
+        end: "bottom 20%",
+        scrub: 2,
+      }
+    });
+  })
+
 
 
   return (
-    <div  className='BestSellerSection_main' >
+    <div className='BestSellerSection_main' >
       <div className='Title_Text' style={{ top: "15px", left: "10px" }}>Explore Bestsellers</div>
 
       <div className='BestSellerSection_slider' >
