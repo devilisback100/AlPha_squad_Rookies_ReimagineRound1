@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
 import './BestSellerSection.css';
-import gsap from 'gsap';
-import {scrollTrigger} from 'gsap/ScrollTrigger';
+import {gsap} from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-gsap.registerPlugin(scrollTrigger);
-
+gsap.registerPlugin(ScrollTrigger);
 
 function BestSellerSectionBox({ source_link, poster_link, Product_name, Target_link }) {
   const videoElementRef = useRef(null);
