@@ -50,8 +50,7 @@ function SummerSellSection() {
         var string = document.querySelector(".Svg_animation")
         string.addEventListener("mousemove", function (e) {
             path = `M 10 100 Q ${e.x} ${e.y} ${windowWidth * 0.8} 100`;
-            console.log("x", e.x)
-            console.log("y", e.y)
+   
 
             gsap.to(".Svg_line path", {
                 duration: 1,
