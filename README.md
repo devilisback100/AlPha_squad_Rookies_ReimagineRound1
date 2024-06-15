@@ -1,4 +1,4 @@
-#THis webiste is a clone of original Boat webiste with try to give a new look as modern website
+# THis webiste is a clone of original Boat webiste with try to give a new look as modern website
 
 
 ## Available Scripts
