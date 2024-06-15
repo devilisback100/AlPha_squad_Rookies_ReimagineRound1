@@ -4,12 +4,18 @@ import './Blogs.css'
 function ExpandBlogs({ Image, Title, Blog_link }) {
     const [htmlCode, setHtmlCode] = useState(null);
     useEffect(() => {
-        fetch("https://reimage-boat-website.vercel.app/get_code/https://www.boat-lifestyle.com" + Blog_link).then(response => response.json())
-            .then(htmlCode => {
-                // Set the state with the fetched HTML code
-                setHtmlCode(htmlCode.join(''));
-            })
-            
+fetch("https://reimage-boat-website.vercel.app/get_code/https://www.boat-lifestyle.com" + Blog_link)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(htmlCode => {
+        setHtmlCode(htmlCode.join(''));
+    })
+    .catch(error => console.error('Error:', error));
+
     }, [Blog_link])
 
     return (
