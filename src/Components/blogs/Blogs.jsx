@@ -9,7 +9,7 @@ function ExpandBlogs({ Image, Title, Blog_link }) {
                 // Set the state with the fetched HTML code
                 setHtmlCode(htmlCode.join(''));
             })
-            .catch(error => console.error('Error:', error));
+            
     }, [Blog_link])
 
     return (
