@@ -47,7 +47,7 @@ function Blogs({ setShowOnlyBlogs }) {
             .then(data => {
                 set_Blog_data(data);
             })
-            .catch(error => console.error('Error:', error));
+            
     }, []);
     const handleClickOutside = () => {
         set_blog_expand_check(null);
