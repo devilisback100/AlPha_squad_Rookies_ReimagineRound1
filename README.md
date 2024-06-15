@@ -1,6 +1,5 @@
-# Getting Started with Create React App
+# THis webiste is a clone of original Boat webiste with try to give a new look as modern website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

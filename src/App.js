@@ -9,7 +9,7 @@ function App() {
     try {
       setShowOnlyBlogs(prevState => !prevState);
     } catch (error) {
-      // console.error('An error occurred: ', error);
+      console.error('An error occurred: ', error);
     }
   };
 
@@ -22,6 +22,7 @@ function App() {
           <BestSelletSection />
           <SummerSellSection />
           <Blogs />
+          
           <BottomSection />
           <Footer />
         </>

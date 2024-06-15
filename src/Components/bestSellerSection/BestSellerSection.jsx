@@ -1,24 +1,36 @@
 import React, { useRef } from 'react';
 import './BestSellerSection.css';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import {gsap} from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
+gsap.registerPlugin(ScrollTrigger);
 
 function BestSellerSectionBox({ source_link, poster_link, Product_name, Target_link }) {
   gsap.registerPlugin(ScrollTrigger);
   const videoElementRef = useRef(null);
 
+  
   const handleMouseEnter = () => {
-    if (videoElementRef.current) {
-      videoElementRef.current.play();
+  if (videoElementRef.current) {
+    const playPromise = videoElementRef.current.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        // Automatic playback started!
+      }).catch(error => {
+        // Auto-play was prevented
+        console.log(error);
+      });
     }
-  };
-  const handleMouseLeave = () => {
-    if (videoElementRef.current) {
-      videoElementRef.current.pause();
-    }
-  };
+  }
+};
+
+const handleMouseLeave = () => {
+  if (videoElementRef.current && !videoElementRef.current.paused) {
+    videoElementRef.current.pause();
+  }
+};
+
 
   const handleClick = () => {
     window.location.href = Target_link;
