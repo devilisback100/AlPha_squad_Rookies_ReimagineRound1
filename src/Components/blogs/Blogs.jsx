@@ -4,7 +4,7 @@ import './Blogs.css'
 function ExpandBlogs({ Image, Title, Blog_link }) {
     const [htmlCode, setHtmlCode] = useState(null);
     useEffect(() => {
-        fetch("https://reimage-boat-website.vercel.app/get_code/https://www.boat-lifestyle.com" + Blog_link)
+        fetch("https://reimage-boat-website.vercel.app:5000/get_code/https://www.boat-lifestyle.com" + Blog_link)
 .then(response => response.json())
             .then(htmlCode => {
                 // Set the state with the fetched HTML code
