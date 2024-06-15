@@ -21,7 +21,7 @@ function App() {
           <Slider />
           <BestSelletSection />
           <SummerSellSection />
-          // <Blogs />
+          
           <BottomSection />
           <Footer />
         </>
