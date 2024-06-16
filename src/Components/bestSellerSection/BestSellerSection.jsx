@@ -4,8 +4,6 @@ import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 
-
-
 function BestSellerSectionBox({ source_link, poster_link, Product_name, Target_link }) {
   gsap.registerPlugin(ScrollTrigger);
   const videoElementRef = useRef(null);
@@ -58,7 +56,8 @@ function BestSellerSection() {
 
     
   useEffect(() => {
-    const trigger = gsap.to(".BestSellerSection_slider", {
+    
+    gsap.to(".BestSellerSection_slider", {
       scrollLeft: "+=1000",
       ease: "power1.out",
       scrollTrigger: {
@@ -68,12 +67,7 @@ function BestSellerSection() {
         scrub: 2,
       }
     });
-
-    // Cleanup function
-    return () => {
-      trigger.scrollTrigger.kill();
-    };
-  }, []);
+  })
 
 
 
