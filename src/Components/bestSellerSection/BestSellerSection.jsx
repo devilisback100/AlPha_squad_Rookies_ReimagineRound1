@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { useGSAP } from '@gsap/react';
 
-// gsap.registerPlugin(ScrollTrigger);
+
 
 function BestSellerSectionBox({ source_link, poster_link, Product_name, Target_link }) {
   gsap.registerPlugin(ScrollTrigger);
