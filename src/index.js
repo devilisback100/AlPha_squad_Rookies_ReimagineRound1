@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'; 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-gsap.registerPlugin(ScrollTrigger);
 
 root.render(
     <App />
