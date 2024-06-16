@@ -1,9 +1,11 @@
 import './App.css';
 import { BottomSection, Slider, Header, Blogs, Footer, BestSelletSection, SummerSellSection } from './Components/component_list';
 import { useState } from 'react';
-
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 function App() {
   const [showOnlyBlogs, setShowOnlyBlogs] = useState(false);
+  gsap.registerPlugin(ScrollTrigger);
 
   const onBlogClick = () => {
     try {
