@@ -58,7 +58,7 @@ function BestSellerSection() {
 
     
   useEffect(() => {
-    gsap.to(".BestSellerSection_slider", {
+    const trigger = gsap.to(".BestSellerSection_slider", {
       scrollLeft: "+=1000",
       ease: "power1.out",
       scrollTrigger: {
@@ -68,7 +68,12 @@ function BestSellerSection() {
         scrub: 2,
       }
     });
-  })
+
+    // Cleanup function
+    return () => {
+      trigger.scrollTrigger.kill();
+    };
+  }, []);
 
 
 
