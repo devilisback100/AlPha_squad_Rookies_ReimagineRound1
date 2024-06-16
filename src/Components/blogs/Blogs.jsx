@@ -9,11 +9,9 @@ function ExpandBlogs({ Image, Title, Blog_link }) {
 
         fetch(requestUrl)
             .then(response => {
-                console.log('Response received:', response); // Log the response object
                 return response.json();
             })
             .then(htmlCode => {
-                console.log('HTML Code:', htmlCode); // Log the HTML code
                 setHtmlCode(htmlCode.join(''));
             })
             .catch(error => console.error('Error:', error));
