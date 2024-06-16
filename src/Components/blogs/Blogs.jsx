@@ -4,15 +4,20 @@ import './Blogs.css'
 function ExpandBlogs({ Image, Title, Blog_link }) {
     const [htmlCode, setHtmlCode] = useState(null);
     useEffect(() => {
-        const encodedUrl = encodeURIComponent("https://www.boat-lifestyle.com" + Blog_link);
-        fetch(`https://boat-reimagine-backend.vercel.app/get_code/?url=${encodedUrl}`)
-            .then(response => response.json())
+        const encodedUrl = encodeURIComponent("https://www.boat-lifestyle.com/" + Blog_link);
+        const requestUrl = `https://boat-reimagine-backend.vercel.app/get_code/?url=${encodedUrl}`;
+
+        fetch(requestUrl)
+            .then(response => {
+                console.log('Response received:', response); // Log the response object
+                return response.json();
+            })
             .then(htmlCode => {
-                // Set the state with the fetched HTML code
+                console.log('HTML Code:', htmlCode); // Log the HTML code
                 setHtmlCode(htmlCode.join(''));
             })
             .catch(error => console.error('Error:', error));
-    }, [Blog_link]);
+    }, [Blog_link]); // Dependency array for useEffect
 
 
     return (
