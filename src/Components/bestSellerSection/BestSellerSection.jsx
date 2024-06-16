@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './BestSellerSection.css';
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import { useGSAP } from '@gsap/react';
+// import { useGSAP } from '@gsap/react';
 
 
 
@@ -57,7 +57,8 @@ function BestSellerSection() {
     ["https://www.boat-lifestyle.com/cdn/shop/files/quinn_CpsRIdJWtpXyFN3enwbXd.mp4", "https://www.boat-lifestyle.com/cdn/shop/files/quinn_v90hMzAEa585W2YTUR9UF.jpg", "Headphones", "https://www.boat-lifestyle.com/collections/rockerz-headphones"],
     ["https://www.boat-lifestyle.com/cdn/shop/files/quinn_j1TwOEeceKYOJc7d7mAim.mp4", "https://www.boat-lifestyle.com/cdn/shop/files/quinn_FY7dfyFMiXzNTqSLFu2lV.jpg", "Wireless Speakers", "https://www.boat-lifestyle.com/collections/wireless-speakers"]]
 
-  useGSAP(() => {
+    
+  useEffect(() => {
     gsap.to(".BestSellerSection_slider", {
       scrollLeft: "+=1000",
       ease: "power1.out",

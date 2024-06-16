@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'; 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 gsap.registerPlugin(ScrollTrigger);
 
