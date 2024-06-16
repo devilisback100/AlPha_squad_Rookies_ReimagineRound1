@@ -52,24 +52,44 @@
     width: 100%;
     height: 100%;
 }
+
+@media screen and (max-width:1050px) {
+    .slider_main {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .slider_part {
+        width: 100%;
+    }
+
+    .slider_image {
+        width: 750px;
+    }
+}
+
 @media screen and (max-width:768px) {
-    .slider_main{
+    .slider_main {
         height: 40vh;
         width: 100%;
     }
-        .slider_part {
-            width: 100%;
-        }
-                .slider_image {
-                    width: 280px;
-                }
+
+    .slider_part {
+        width: 100%;
+    }
+
+    .slider_image {
+        width: 280px;
+    }
 }
+
 @media screen and (max-width:550px) {
-.slider_main {
+    .slider_main {
         height: 25vh;
         width: 100%;
     }
-        .slider_image {
-            width: 250px;
-        }
+
+    .slider_image {
+        width: 250px;
+    }
 }
