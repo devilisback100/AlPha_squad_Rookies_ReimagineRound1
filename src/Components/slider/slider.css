@@ -64,3 +64,12 @@
                     width: 280px;
                 }
 }
+@media screen and (max-width:550px) {
+.slider_main {
+        height: 25vh;
+        width: 100%;
+    }
+        .slider_image {
+            width: 250px;
+        }
+}

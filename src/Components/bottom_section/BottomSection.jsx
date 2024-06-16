@@ -11,7 +11,7 @@ function BottomSection() {
         ["https://www.boat-lifestyle.com/cdn/shop/files/Audiophile_5.png?v=1696328658", "For Audiophiles", "https://www.boat-lifestyle.com/collections/audiophille"]]]
     return (
         <div className='BottomSection_main'>
-            <div className='Title_Text' style={{ top: "-15px", left: "10px" }}>Shop by Lifestyle</div>
+            <div className='Title_Text' style={{ top: "-20px", left: "10px" }}>Shop by Lifestyle</div>
             <div className='BottomSection_part_1'>
                 <div className='BottomSection_part_1_box_1'>
                     {BottomSection_Data[0][0].map((data,i) => {

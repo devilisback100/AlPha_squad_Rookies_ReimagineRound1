@@ -520,6 +520,7 @@ li.extra--link {
     .footer-collection-block {
         width: 25%;
     }
+    
 }
 
 @media screen and (min-width: 767px) {
@@ -635,4 +636,7 @@ li.extra--link {
             align-items: center;
             justify-content: center;
         }
+}
+.col-12 {
+    display: none;
 }

@@ -7,6 +7,7 @@
     flex-direction: column;
     position: relative;
     z-index: 15;
+    margin-top: 25px;
 }
 
 .BottomSection_part_1 {

@@ -117,6 +117,9 @@
         padding: 3px;
         overflow: scroll;
     }
+        .Expand_blogs{
+            height: 80%;
+        }
 }
 
 @media screen and (max-width:600px) {
@@ -130,7 +133,7 @@
 @media screen and (max-width:550px) {
     .Expand_blogs {
         width: 85%;
-        height: 85%;
+        height: 83%;
     }
 
     .Expand_blogs_part2 {
